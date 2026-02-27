@@ -2,12 +2,6 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
-  <!-- ══════════════════════════════════════════
-       SEGURIDAD — HTTP Security Headers via meta
-       (En producción, configurar también en el
-        servidor / netlify.toml / _headers)
-  ══════════════════════════════════════════ -->
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'self';
                  script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.googletagservices.com https://adservice.google.com;
@@ -20,36 +14,25 @@
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
-
-  <!-- ══ SEO ══ -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="NEXUS GAMING — Reviews honestas, noticias gaming, los mejores deals en videojuegos y guías para PC, PlayStation y Xbox. Tu comunidad gamer en español.">
   <meta name="keywords" content="gaming, videojuegos, reviews, noticias gaming, deals juegos, PC gaming, PlayStation, Xbox, esports">
   <meta name="author" content="Nexus Gaming">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://nexus-gaming-ar.netlify.app/">
-
-  <!-- ══ Open Graph (redes sociales) ══ -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="NEXUS GAMING — Tu portal definitivo al mundo gaming">
   <meta property="og:description" content="Reviews honestas, noticias, deals y comunidad gamer en español.">
   <meta property="og:url" content="https://nexus-gaming-ar.netlify.app/">
   <meta property="og:site_name" content="Nexus Gaming">
   <meta property="og:locale" content="es_AR">
-
-  <!-- ══ Twitter Card ══ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NEXUS GAMING">
   <meta name="twitter:description" content="Reviews honestas, noticias y deals gaming en español.">
-
   <title>NEXUS GAMING — Reviews · Noticias · Deals</title>
-
-  <!-- ══ Fonts ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Barlow:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- ══ Structured Data (SEO) ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -65,29 +48,8 @@
     }
   }
   </script>
-
-  <!-- ══ Google AdSense ══
-       INSTRUCCIÓN: Reemplaza "ca-pub-XXXXXXXXXXXXXXXXX" con tu Publisher ID real
-       Obtén tu ID en: https://adsense.google.com
-  -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5951124570509449" crossorigin="anonymous"></script>
-
-  <!-- ══ Google Analytics ══
-       INSTRUCCIÓN: Reemplaza "G-XXXXXXXXXX" con tu Measurement ID real
-       Obtén tu ID en: https://analytics.google.com
-  -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-  </script> -->
-
   <style>
-    /* ══════════════════════════════════════
-       DESIGN SYSTEM
-    ══════════════════════════════════════ */
     :root {
       --cyan:       #00e5ff;
       --pink:       #ff1744;
@@ -102,242 +64,87 @@
       --font-head:  'Orbitron', monospace;
       --font-body:  'Barlow', sans-serif;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* GRID BG */
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
     body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none; z-index: 0;
+      content: ''; position: fixed; inset: 0;
+      background-image: linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px; pointer-events: none; z-index: 0;
     }
-
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     button, input { font-family: var(--font-body); }
     :focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 2px; }
 
-    /* ══ COOKIE BANNER ══ */
+    /* COOKIE */
     #cookieBanner {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
+      background: var(--bg-surface); border-top: 1px solid var(--border);
+      padding: 1.25rem 2rem; display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
       box-shadow: 0 -4px 30px rgba(0,0,0,0.5);
     }
     #cookieBanner p { font-size: 0.85rem; color: var(--muted); flex: 1; min-width: 200px; }
     #cookieBanner a { color: var(--cyan); text-decoration: underline; }
     .cookie-btns { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-    .btn-cookie-accept {
-      background: var(--cyan); color: var(--bg);
-      border: none; padding: 0.6rem 1.4rem; border-radius: 4px;
-      font-family: var(--font-head); font-size: 0.7rem; font-weight: 700;
-      letter-spacing: 1px; cursor: pointer; transition: box-shadow 0.2s;
-    }
+    .btn-cookie-accept { background: var(--cyan); color: var(--bg); border: none; padding: 0.6rem 1.4rem; border-radius: 4px; font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: box-shadow 0.2s; }
     .btn-cookie-accept:hover { box-shadow: 0 0 16px var(--cyan); }
-    .btn-cookie-reject {
-      background: transparent; color: var(--muted);
-      border: 1px solid var(--muted); padding: 0.6rem 1.4rem; border-radius: 4px;
-      font-size: 0.75rem; cursor: pointer; transition: color 0.2s, border-color 0.2s;
-    }
+    .btn-cookie-reject { background: transparent; color: var(--muted); border: 1px solid var(--muted); padding: 0.6rem 1.4rem; border-radius: 4px; font-size: 0.75rem; cursor: pointer; transition: color 0.2s, border-color 0.2s; }
     .btn-cookie-reject:hover { color: var(--text); border-color: var(--text); }
 
-    /* ══ NAV ══ */
-    nav {
-      position: sticky; top: 0; z-index: 500;
-      background: rgba(4,6,14,0.9);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 60px; gap: 1rem;
-    }
-    .nav-logo {
-      font-family: var(--font-head); font-weight: 900; font-size: 1.2rem;
-      color: var(--cyan); text-shadow: 0 0 18px var(--cyan); letter-spacing: 4px;
-    }
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 500; background: rgba(4,6,14,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 1rem; }
+    .nav-logo { font-family: var(--font-head); font-weight: 900; font-size: 1.2rem; color: var(--cyan); text-shadow: 0 0 18px var(--cyan); letter-spacing: 4px; }
     .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      color: var(--muted); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: var(--muted); font-size: 0.78rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--cyan); }
     .nav-right { display: flex; align-items: center; gap: 0.75rem; }
-    .btn-nav {
-      background: transparent; border: 1px solid var(--pink); color: var(--pink);
-      padding: 0.45rem 1rem; border-radius: 4px;
-      font-family: var(--font-head); font-size: 0.65rem; letter-spacing: 1px;
-      cursor: pointer; transition: all 0.2s;
-    }
+    .btn-nav { background: transparent; border: 1px solid var(--pink); color: var(--pink); padding: 0.45rem 1rem; border-radius: 4px; font-family: var(--font-head); font-size: 0.65rem; letter-spacing: 1px; cursor: pointer; transition: all 0.2s; }
     .btn-nav:hover { background: var(--pink); color: #fff; box-shadow: 0 0 16px var(--pink); }
 
-    /* ══ HERO ══ */
-    .hero {
-      position: relative; z-index: 1;
-      min-height: 88vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 5rem 2rem 4rem; overflow: hidden;
-    }
-    .hero-glow {
-      position: absolute; top: 40%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 700px; height: 700px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-eyebrow {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(255,23,68,0.08); border: 1px solid rgba(255,23,68,0.3);
-      color: var(--pink); font-size: 0.68rem; letter-spacing: 4px;
-      text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 2px;
-      margin-bottom: 1.75rem;
-      animation: fadeUp 0.7s ease both;
-    }
-    .live-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--pink); animation: pulse 1.5s infinite;
-    }
-    .hero h1 {
-      font-family: var(--font-head); font-weight: 900;
-      font-size: clamp(3.2rem, 9vw, 8rem); line-height: 0.95;
-      letter-spacing: 2px; position: relative;
-      animation: fadeUp 0.7s ease 0.1s both;
-    }
-    .hero h1 .accent {
-      color: var(--cyan);
-      text-shadow: 0 0 50px var(--cyan), 0 0 100px rgba(0,229,255,0.25);
-    }
-    .hero-sub {
-      font-size: 1.05rem; color: var(--muted); max-width: 540px;
-      margin: 1.75rem auto 2.5rem; line-height: 1.9; font-weight: 300;
-      animation: fadeUp 0.7s ease 0.2s both;
-    }
-    .hero-btns {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-      animation: fadeUp 0.7s ease 0.3s both;
-    }
-    .btn-primary {
-      background: var(--cyan); color: var(--bg);
-      border: none; padding: 0.9rem 2.2rem; border-radius: 4px;
-      font-family: var(--font-head); font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 2px; cursor: pointer; transition: all 0.2s;
-      display: inline-block;
-    }
+    /* HERO */
+    .hero { position: relative; z-index: 1; min-height: 88vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 5rem 2rem 4rem; overflow: hidden; }
+    .hero-glow { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 65%); pointer-events: none; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,23,68,0.08); border: 1px solid rgba(255,23,68,0.3); color: var(--pink); font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.75rem; animation: fadeUp 0.7s ease both; }
+    .live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); animation: pulse 1.5s infinite; }
+    .hero h1 { font-family: var(--font-head); font-weight: 900; font-size: clamp(3.2rem, 9vw, 8rem); line-height: 0.95; letter-spacing: 2px; position: relative; animation: fadeUp 0.7s ease 0.1s both; }
+    .hero h1 .accent { color: var(--cyan); text-shadow: 0 0 50px var(--cyan), 0 0 100px rgba(0,229,255,0.25); }
+    .hero-sub { font-size: 1.05rem; color: var(--muted); max-width: 540px; margin: 1.75rem auto 2.5rem; line-height: 1.9; font-weight: 300; animation: fadeUp 0.7s ease 0.2s both; }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.7s ease 0.3s both; }
+    .btn-primary { background: var(--cyan); color: var(--bg); border: none; padding: 0.9rem 2.2rem; border-radius: 4px; font-family: var(--font-head); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; display: inline-block; }
     .btn-primary:hover { box-shadow: 0 0 28px var(--cyan); transform: translateY(-2px); }
-    .btn-ghost {
-      background: transparent; color: var(--text);
-      border: 1px solid rgba(232,237,248,0.2); padding: 0.9rem 2.2rem; border-radius: 4px;
-      font-family: var(--font-head); font-size: 0.75rem; font-weight: 700;
-      letter-spacing: 2px; cursor: pointer; transition: all 0.2s;
-      display: inline-block;
-    }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(232,237,248,0.2); padding: 0.9rem 2.2rem; border-radius: 4px; font-family: var(--font-head); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; cursor: pointer; transition: all 0.2s; display: inline-block; }
     .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); }
 
-    /* ══ STATS ══ */
-    .stats-strip {
-      position: relative; z-index: 1;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 1.75rem 2rem;
-      display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap;
-    }
+    /* STATS */
+    .stats-strip { position: relative; z-index: 1; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.75rem 2rem; display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap; }
     .stat { text-align: center; }
-    .stat-n {
-      font-family: var(--font-head); font-size: 1.8rem; font-weight: 900;
-      color: var(--cyan); text-shadow: 0 0 12px var(--cyan); display: block;
-    }
+    .stat-n { font-family: var(--font-head); font-size: 1.8rem; font-weight: 900; color: var(--cyan); text-shadow: 0 0 12px var(--cyan); display: block; }
     .stat-l { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
 
-    /* ══ AD BANNER (AdSense placeholder) ══ */
-    .ad-banner {
-      position: relative; z-index: 1;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex; align-items: center; justify-content: center;
-      min-height: 100px;
-    }
-    .ad-placeholder {
-      width: 100%; max-width: 728px;
-      background: var(--bg-surface);
-      border: 1px dashed rgba(255,255,255,0.1);
-      border-radius: 4px; height: 90px;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--muted); font-size: 0.7rem; letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-    /* AdSense real — descomenta cuando tengas tu Publisher ID:
-    .adsense-leaderboard { display: block; width: 728px; height: 90px; }
-    */
+    /* AD */
+    .ad-banner { position: relative; z-index: 1; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: center; min-height: 100px; }
+    .ad-placeholder { width: 100%; max-width: 728px; background: var(--bg-surface); border: 1px dashed rgba(255,255,255,0.1); border-radius: 4px; height: 90px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; }
 
-    /* ══ SECTION WRAPPER ══ */
-    .section-wrap {
-      position: relative; z-index: 1;
-      max-width: 1180px; margin: 0 auto; padding: 4.5rem 2rem;
-    }
+    /* SECTION */
+    .section-wrap { position: relative; z-index: 1; max-width: 1180px; margin: 0 auto; padding: 4.5rem 2rem; }
     .section-head { margin-bottom: 2.5rem; }
-    .section-tag {
-      font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase;
-      color: var(--pink); margin-bottom: 0.5rem; display: block;
-    }
-    .section-title {
-      font-family: var(--font-head); font-size: clamp(1.4rem, 3vw, 2.2rem);
-      font-weight: 700;
-    }
-    .section-more {
-      float: right; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--cyan); transition: text-shadow 0.2s;
-    }
+    .section-tag { font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase; color: var(--pink); margin-bottom: 0.5rem; display: block; }
+    .section-title { font-family: var(--font-head); font-size: clamp(1.4rem, 3vw, 2.2rem); font-weight: 700; }
+    .section-more { float: right; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--cyan); transition: text-shadow 0.2s; }
     .section-more:hover { text-shadow: 0 0 8px var(--cyan); }
 
-    /* ══ GAME CARDS ══ */
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 1.25rem;
-    }
-    .game-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 8px; overflow: hidden;
-      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-      cursor: pointer; display: flex; flex-direction: column;
-    }
-    .game-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--cyan);
-      box-shadow: 0 8px 36px rgba(0,229,255,0.12);
-    }
-    .card-thumb {
-      aspect-ratio: 16/9;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3.5rem; position: relative; overflow: hidden;
-    }
-    .badge {
-      position: absolute; top: 0.6rem; right: 0.6rem;
-      padding: 0.2rem 0.55rem; border-radius: 2px;
-      font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-    }
+    /* GAME CARDS */
+    .games-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; }
+    .game-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; cursor: pointer; display: flex; flex-direction: column; }
+    .game-card:hover { transform: translateY(-6px); border-color: var(--cyan); box-shadow: 0 8px 36px rgba(0,229,255,0.12); }
+    .card-thumb { aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; overflow: hidden; }
+    .badge { position: absolute; top: 0.6rem; right: 0.6rem; padding: 0.2rem 0.55rem; border-radius: 2px; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
     .badge-hot  { background: var(--pink);  color: #fff; }
     .badge-new  { background: var(--green); color: var(--bg); }
     .badge-goty { background: var(--gold);  color: var(--bg); }
     .badge-deal { background: var(--cyan);  color: var(--bg); }
-
+    .badge-trending { background: var(--pink); color: #fff; }
     .card-body { padding: 1.1rem; flex: 1; display: flex; flex-direction: column; }
     .card-genre { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
     .card-title { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem; }
@@ -346,228 +153,122 @@
     .card-rating { font-family: var(--font-head); font-size: 0.8rem; color: var(--gold); display: flex; align-items: center; gap: 0.3rem; }
     .card-price { font-family: var(--font-head); font-size: 0.9rem; color: var(--cyan); font-weight: 700; }
     .card-price-old { font-size: 0.75rem; color: var(--muted); text-decoration: line-through; margin-right: 0.3rem; }
-
-    /* Affiliate CTA on card */
-    .card-cta {
-      display: block; width: 100%;
-      background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.2);
-      color: var(--cyan); text-align: center;
-      padding: 0.55rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px;
-      text-transform: uppercase; cursor: pointer;
-      transition: background 0.2s, box-shadow 0.2s;
-      border-radius: 0 0 7px 7px;
-    }
+    .card-cta { display: block; width: 100%; background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.2); color: var(--cyan); text-align: center; padding: 0.55rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; border-radius: 0 0 7px 7px; }
     .card-cta:hover { background: rgba(0,229,255,0.12); box-shadow: inset 0 0 12px rgba(0,229,255,0.08); }
 
-    /* ══ DEALS SECTION ══ */
-    .deals-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-    .deal-card {
-      background: var(--bg-card);
-      border: 1px solid rgba(255,214,0,0.12);
-      border-radius: 8px; overflow: hidden;
-      display: flex; align-items: stretch;
-      transition: transform 0.3s, border-color 0.3s;
-    }
+    /* DEALS */
+    .deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; }
+    .deal-card { background: var(--bg-card); border: 1px solid rgba(255,214,0,0.12); border-radius: 8px; overflow: hidden; display: flex; align-items: stretch; transition: transform 0.3s, border-color 0.3s; }
     .deal-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .deal-thumb {
-      width: 90px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-    }
+    .deal-thumb { width: 90px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
     .deal-body { padding: 1rem; flex: 1; }
     .deal-store { font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 0.3rem; }
     .deal-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.35rem; }
     .deal-prices { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
     .deal-new { font-family: var(--font-head); font-size: 1rem; color: var(--gold); font-weight: 700; }
     .deal-old { font-size: 0.8rem; color: var(--muted); text-decoration: line-through; }
-    .deal-off {
-      background: var(--pink); color: #fff;
-      font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 2px;
-    }
-    .deal-cta {
-      display: inline-block;
-      background: var(--gold); color: var(--bg);
-      padding: 0.4rem 0.9rem; border-radius: 3px;
-      font-family: var(--font-head); font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 1px; cursor: pointer;
-      transition: box-shadow 0.2s;
-    }
+    .deal-off { background: var(--pink); color: #fff; font-size: 0.6rem; font-weight: 700; padding: 0.15rem 0.4rem; border-radius: 2px; }
+    .deal-cta { display: inline-block; background: var(--gold); color: var(--bg); padding: 0.4rem 0.9rem; border-radius: 3px; font-family: var(--font-head); font-size: 0.65rem; font-weight: 700; letter-spacing: 1px; cursor: pointer; transition: box-shadow 0.2s; }
     .deal-cta:hover { box-shadow: 0 0 14px var(--gold); }
 
-    /* ══ BLOG/NOTICIAS ══ */
-    .news-grid {
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 1.25rem;
-    }
-    .news-featured {
-      background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 8px; overflow: hidden;
-      cursor: pointer; transition: border-color 0.3s;
-    }
+    /* ══ BLOG DINÁMICO ══ */
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+    .blog-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; cursor: pointer; }
+    .blog-card:hover { transform: translateY(-5px); border-color: var(--cyan); box-shadow: 0 8px 36px rgba(0,229,255,0.1); }
+    .blog-thumb { aspect-ratio: 16/8; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
+    .blog-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-cat { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); margin-bottom: 0.5rem; display: block; }
+    .blog-title { font-family: var(--font-head); font-size: 0.92rem; font-weight: 700; line-height: 1.45; margin-bottom: 0.6rem; }
+    .blog-excerpt { font-size: 0.8rem; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 1rem; }
+    .blog-meta { font-size: 0.68rem; color: var(--muted); letter-spacing: 1px; display: flex; gap: 1rem; margin-bottom: 0.9rem; }
+    .blog-cta { display: block; width: 100%; background: rgba(0,229,255,0.06); border: 1px solid rgba(0,229,255,0.2); color: var(--cyan); text-align: center; padding: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; border-radius: 4px; transition: background 0.2s; }
+    .blog-cta:hover { background: rgba(0,229,255,0.14); }
+    .blog-loading { text-align: center; padding: 3rem; color: var(--muted); font-size: 0.85rem; letter-spacing: 2px; }
+    .blog-error { text-align: center; padding: 2rem; color: var(--pink); font-size: 0.8rem; }
+
+    /* NOTICIAS */
+    .news-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 1.25rem; }
+    .news-featured { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden; cursor: pointer; transition: border-color 0.3s; }
     .news-featured:hover { border-color: var(--cyan); }
-    .news-featured-img {
-      aspect-ratio: 16/8; display: flex; align-items: center;
-      justify-content: center; font-size: 6rem;
-      background: linear-gradient(135deg, #0a1628 0%, #0f3460 100%);
-    }
+    .news-featured-img { aspect-ratio: 16/8; display: flex; align-items: center; justify-content: center; font-size: 6rem; background: linear-gradient(135deg, #0a1628 0%, #0f3460 100%); }
     .news-featured-body { padding: 1.5rem; }
-    .news-featured-body .card-genre { margin-bottom: 0.6rem; }
-    .news-featured-title {
-      font-family: var(--font-head); font-size: 1.15rem; font-weight: 700;
-      line-height: 1.4; margin-bottom: 0.7rem;
-    }
+    .news-featured-title { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; line-height: 1.4; margin-bottom: 0.7rem; }
     .news-featured-excerpt { color: var(--muted); font-size: 0.87rem; line-height: 1.7; margin-bottom: 1rem; }
     .news-meta { font-size: 0.72rem; color: var(--muted); letter-spacing: 1px; }
-
     .news-stack { display: flex; flex-direction: column; gap: 1rem; }
-    .news-item {
-      background: var(--bg-card);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 8px; padding: 1rem;
-      display: flex; gap: 0.9rem; align-items: flex-start;
-      cursor: pointer; transition: border-color 0.3s, transform 0.2s;
-    }
+    .news-item { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 1rem; display: flex; gap: 0.9rem; align-items: flex-start; cursor: pointer; transition: border-color 0.3s, transform 0.2s; }
     .news-item:hover { border-color: var(--pink); transform: translateX(4px); }
     .news-item-icon { font-size: 1.8rem; flex-shrink: 0; margin-top: 2px; }
     .news-item-title { font-size: 0.85rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.3rem; }
     .news-item-meta { font-size: 0.68rem; color: var(--muted); letter-spacing: 1px; }
+    .ad-rect-placeholder { background: var(--bg-surface); border: 1px dashed rgba(255,255,255,0.08); border-radius: 4px; height: 250px; width: 300px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--muted); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; gap: 0.5rem; }
 
-    /* ══ AD RECTANGLE (sidebar) ══ */
-    .ad-rect-placeholder {
-      background: var(--bg-surface);
-      border: 1px dashed rgba(255,255,255,0.08);
-      border-radius: 4px; height: 250px; width: 300px; margin: 0 auto;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      color: var(--muted); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
-      gap: 0.5rem;
-    }
-
-    /* ══ NEWSLETTER ══ */
-    .newsletter-wrap {
-      position: relative; z-index: 1;
-      background: var(--bg-card);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 4rem 2rem; text-align: center;
-    }
-    .newsletter-wrap h2 {
-      font-family: var(--font-head); font-size: 1.7rem; margin-bottom: 0.6rem;
-    }
+    /* NEWSLETTER */
+    .newsletter-wrap { position: relative; z-index: 1; background: var(--bg-card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 2rem; text-align: center; }
+    .newsletter-wrap h2 { font-family: var(--font-head); font-size: 1.7rem; margin-bottom: 0.6rem; }
     .newsletter-wrap p { color: var(--muted); font-size: 0.92rem; margin-bottom: 2rem; }
-    .nl-form {
-      display: flex; gap: 0.75rem; justify-content: center;
-      flex-wrap: wrap; max-width: 480px; margin: 0 auto;
-    }
-    .nl-input {
-      flex: 1; min-width: 210px;
-      background: var(--bg-surface); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 4px; padding: 0.82rem 1.1rem;
-      color: var(--text); font-size: 0.9rem; outline: none;
-      transition: border-color 0.2s;
-    }
+    .nl-form { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; max-width: 480px; margin: 0 auto; }
+    .nl-input { flex: 1; min-width: 210px; background: var(--bg-surface); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.82rem 1.1rem; color: var(--text); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
     .nl-input:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(0,229,255,0.08); }
     .nl-input::placeholder { color: var(--muted); }
     .nl-msg { margin-top: 0.75rem; font-size: 0.8rem; min-height: 1.2em; }
     .nl-msg.ok  { color: var(--green); }
     .nl-msg.err { color: var(--pink); }
 
-    /* ══ FOOTER ══ */
-    footer {
-      position: relative; z-index: 1;
-      background: var(--bg-card);
-      border-top: 1px solid rgba(255,255,255,0.04);
-      padding: 3rem 2rem 1.5rem;
-    }
-    .footer-inner {
-      max-width: 1180px; margin: 0 auto;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem;
-    }
-    .footer-brand {}
-    .footer-logo {
-      font-family: var(--font-head); font-size: 1.3rem; font-weight: 900;
-      color: var(--cyan); letter-spacing: 4px;
-      text-shadow: 0 0 16px var(--cyan); margin-bottom: 0.75rem;
-    }
+    /* FOOTER */
+    footer { position: relative; z-index: 1; background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.04); padding: 3rem 2rem 1.5rem; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+    .footer-logo { font-family: var(--font-head); font-size: 1.3rem; font-weight: 900; color: var(--cyan); letter-spacing: 4px; text-shadow: 0 0 16px var(--cyan); margin-bottom: 0.75rem; }
     .footer-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
     .footer-disclaimer { font-size: 0.72rem; color: var(--muted); line-height: 1.6; border-left: 2px solid var(--border); padding-left: 0.75rem; }
-    .footer-col-title {
-      font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 3px;
-      text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem;
-    }
+    .footer-col-title { font-family: var(--font-head); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--cyan); margin-bottom: 1rem; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
     .footer-links a { font-size: 0.82rem; color: var(--muted); transition: color 0.2s; }
     .footer-links a:hover { color: var(--text); }
-    .footer-bottom {
-      max-width: 1180px; margin: 2rem auto 0;
-      padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.04);
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-    }
+    .footer-bottom { max-width: 1180px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.04); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .footer-copy { font-size: 0.72rem; color: var(--muted); letter-spacing: 1px; }
     .footer-legal { display: flex; gap: 1.5rem; }
     .footer-legal a { font-size: 0.72rem; color: var(--muted); transition: color 0.2s; }
     .footer-legal a:hover { color: var(--cyan); }
 
-    /* ══ ANIMATIONS ══ */
+    /* ANIMATIONS */
     @keyframes fadeUp   { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
     @keyframes pulse    { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
-    @keyframes scanline { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
-
-    /* Reveal on scroll */
-    .reveal {
-      opacity: 0; transform: translateY(28px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
-    }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* Card bg themes */
     .t1 { background: linear-gradient(135deg,#0f2027,#1a3a4a); }
     .t2 { background: linear-gradient(135deg,#1a0533,#2d0f5c); }
     .t3 { background: linear-gradient(135deg,#0a1628,#0f3460); }
     .t4 { background: linear-gradient(135deg,#1c0a00,#3d1200); }
     .t5 { background: linear-gradient(135deg,#001a00,#003300); }
     .t6 { background: linear-gradient(135deg,#1a1a00,#333200); }
+    .t7 { background: linear-gradient(135deg,#001433,#002266); }
+    .t8 { background: linear-gradient(135deg,#1a0022,#33003d); }
 
-    /* ══ RESPONSIVE ══ */
-    @media (max-width: 900px) {
-      .news-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 680px) {
-      .nav-links, .nav-right .btn-nav { display: none; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-    }
+    @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } .footer-inner { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 680px) { .nav-links, .nav-right .btn-nav { display: none; } .footer-inner { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
   </style>
 </head>
 <body>
 
-<!-- ══ COOKIE CONSENT BANNER (GDPR/Legal) ══ -->
+<!-- COOKIE CONSENT -->
 <div id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
-  <p>
-    Usamos cookies propias y de terceros (Google AdSense, Google Analytics) para mejorar tu experiencia,
-    analizar el tráfico y mostrar publicidad personalizada. Lee nuestra
-    <a href="privacy.html">Política de Privacidad</a>.
-  </p>
+  <p>Usamos cookies propias y de terceros (Google AdSense, Google Analytics) para mejorar tu experiencia. Lee nuestra <a href="privacy.html">Política de Privacidad</a>.</p>
   <div class="cookie-btns">
     <button class="btn-cookie-accept" id="cookieAccept" type="button">Aceptar todo</button>
     <button class="btn-cookie-reject" id="cookieReject" type="button">Solo esenciales</button>
   </div>
 </div>
 
-<!-- ══ NAVBAR ══ -->
+<!-- NAV -->
 <nav role="navigation" aria-label="Navegación principal">
   <a href="#inicio" class="nav-logo" aria-label="NEXUS GAMING – Inicio">NEXUS</a>
   <ul class="nav-links" role="list">
     <li><a href="#juegos">Juegos</a></li>
     <li><a href="#deals">Deals</a></li>
+    <li><a href="#blog">Blog</a></li>
     <li><a href="#noticias">Noticias</a></li>
-    <li><a href="#esports">Esports</a></li>
   </ul>
   <div class="nav-right">
     <button class="btn-nav" type="button">LOGIN</button>
@@ -576,328 +277,220 @@
 
 <main>
 
-  <!-- ══ HERO ══ -->
+  <!-- HERO -->
   <section id="inicio" class="hero" aria-label="Portada">
     <div class="hero-glow" aria-hidden="true"></div>
-    <span class="hero-eyebrow">
-      <span class="live-dot" aria-hidden="true"></span>
-      TEMPORADA 2025 · EN VIVO
-    </span>
-    <h1>
-      <span class="accent">NEXUS</span><br>GAMING
-    </h1>
-    <p class="hero-sub">
-      Reviews honestas, las mejores ofertas del mercado y noticias gaming al instante.
-      Tu portal en español, sin filtros.
-    </p>
+    <span class="hero-eyebrow"><span class="live-dot" aria-hidden="true"></span>TEMPORADA 2025 · EN VIVO</span>
+    <h1><span class="accent">NEXUS</span><br>GAMING</h1>
+    <p class="hero-sub">Reviews honestas, las mejores ofertas del mercado y noticias gaming al instante. Tu portal en español, sin filtros.</p>
     <div class="hero-btns">
-      <a href="#juegos"  class="btn-primary">Ver Reviews</a>
-      <a href="#deals"   class="btn-ghost">Deals Hoy</a>
+      <a href="#blog" class="btn-primary">Ver Artículos</a>
+      <a href="#deals" class="btn-ghost">Deals Hoy</a>
     </div>
   </section>
 
-  <!-- ══ STATS ══ -->
+  <!-- STATS -->
   <div class="stats-strip" role="region" aria-label="Estadísticas">
-    <div class="stat"><span class="stat-n">2.4M+</span><span class="stat-l">Lectores</span></div>
+    <div class="stat"><span class="stat-n" id="stat-articulos">0</span><span class="stat-l">Artículos</span></div>
     <div class="stat"><span class="stat-n">850+</span><span class="stat-l">Reviews</span></div>
     <div class="stat"><span class="stat-n">120+</span><span class="stat-l">Torneos</span></div>
     <div class="stat"><span class="stat-n">24/7</span><span class="stat-l">Cobertura</span></div>
   </div>
 
-  <!-- ══ ANUNCIO LEADERBOARD (AdSense 728x90) ══ -->
+  <!-- AD LEADERBOARD -->
   <div class="ad-banner" aria-label="Publicidad">
-    <!-- PRODUCCIÓN: reemplaza el div por el código AdSense real:
-    <ins class="adsbygoogle adsense-leaderboard"
-         data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
-         data-ad-slot="XXXXXXXXXX"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    -->
-    <div class="ad-placeholder" aria-hidden="true">
-      📢 ESPACIO PUBLICITARIO — ADSENSE 728×90
-    </div>
+    <div class="ad-placeholder" aria-hidden="true">📢 ESPACIO PUBLICITARIO — ADSENSE 728×90</div>
   </div>
 
-  <!-- ══ JUEGOS DESTACADOS ══ -->
+  <!-- JUEGOS DESTACADOS -->
   <div class="section-wrap" id="juegos">
     <div class="section-head">
       <span class="section-tag">// REVIEWS DESTACADAS</span>
-      <h2 class="section-title">Juegos Top Rated
-        <a href="#" class="section-more" aria-label="Ver todas las reviews">Ver todas →</a>
-      </h2>
+      <h2 class="section-title">Juegos Top Rated <a href="#" class="section-more">Ver todas →</a></h2>
     </div>
-
     <div class="games-grid" role="list">
-
-      <article class="game-card reveal" role="listitem" tabindex="0" aria-label="Elden Ring">
+      <article class="game-card reveal" role="listitem" tabindex="0">
         <div class="card-thumb t1"><span aria-hidden="true">⚔️</span><span class="badge badge-goty">GOTY</span></div>
         <div class="card-body">
           <p class="card-genre">RPG · Acción · Open World</p>
           <h3 class="card-title">Elden Ring</h3>
           <p class="card-desc">El Lands Between te espera. Un mundo abierto brutal y sublime que redefinió el género.</p>
-          <div class="card-foot">
-            <span class="card-rating">★ 9.8</span>
-            <span class="card-price">$59.99</span>
-          </div>
+          <div class="card-foot"><span class="card-rating">★ 9.8</span><span class="card-price">$59.99</span></div>
         </div>
-        <!-- Afiliado Amazon — INSTRUCCIÓN: reemplaza XXXXXXXX con tu tag de afiliado -->
-        <a class="card-cta" href="https://amazon.com/dp/B09R4QBFK4?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank" aria-label="Comprar Elden Ring en Amazon">
-          🛒 COMPRAR EN AMAZON
-        </a>
+        <a class="card-cta" href="https://amazon.com/dp/B09R4QBFK4?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank">🛒 COMPRAR EN AMAZON</a>
       </article>
-
-      <article class="game-card reveal" role="listitem" tabindex="0" aria-label="Cyberpunk 2077">
+      <article class="game-card reveal" role="listitem" tabindex="0">
         <div class="card-thumb t2"><span aria-hidden="true">🤖</span><span class="badge badge-hot">HOT</span></div>
         <div class="card-body">
           <p class="card-genre">RPG · Open World · Cyberpunk</p>
           <h3 class="card-title">Cyberpunk 2077</h3>
           <p class="card-desc">Night City, 2077. Construye tu leyenda en el mundo más peligroso del futuro.</p>
-          <div class="card-foot">
-            <span class="card-rating">★ 9.1</span>
-            <span><span class="card-price-old">$59.99</span><span class="card-price">$39.99</span></span>
-          </div>
+          <div class="card-foot"><span class="card-rating">★ 9.1</span><span><span class="card-price-old">$59.99</span><span class="card-price">$39.99</span></span></div>
         </div>
-        <a class="card-cta" href="https://amazon.com/dp/B08KJT9CSK?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank" aria-label="Comprar Cyberpunk 2077 en Amazon">
-          🛒 COMPRAR EN AMAZON
-        </a>
+        <a class="card-cta" href="https://amazon.com/dp/B08KJT9CSK?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank">🛒 COMPRAR EN AMAZON</a>
       </article>
-
-      <article class="game-card reveal" role="listitem" tabindex="0" aria-label="Baldur's Gate 3">
+      <article class="game-card reveal" role="listitem" tabindex="0">
         <div class="card-thumb t3"><span aria-hidden="true">🐉</span><span class="badge badge-new">NUEVO</span></div>
         <div class="card-body">
           <p class="card-genre">RPG · Estrategia · D&amp;D</p>
           <h3 class="card-title">Baldur's Gate 3</h3>
           <p class="card-desc">El RPG definitivo. Elige tu destino en el universo de D&amp;D más vivo jamás creado.</p>
-          <div class="card-foot">
-            <span class="card-rating">★ 9.6</span>
-            <span class="card-price">$59.99</span>
-          </div>
+          <div class="card-foot"><span class="card-rating">★ 9.6</span><span class="card-price">$59.99</span></div>
         </div>
-        <a class="card-cta" href="https://www.humblebundle.com/store/baldurs-gate-3?partner=nexusgaming" rel="noopener sponsored" target="_blank" aria-label="Comprar Baldur's Gate 3 en Humble Bundle">
-          🛒 VER EN HUMBLE BUNDLE
-        </a>
+        <a class="card-cta" href="https://www.humblebundle.com/store/baldurs-gate-3?partner=nexusgaming" rel="noopener sponsored" target="_blank">🛒 VER EN HUMBLE BUNDLE</a>
       </article>
-
-      <article class="game-card reveal" role="listitem" tabindex="0" aria-label="Dark Souls III">
+      <article class="game-card reveal" role="listitem" tabindex="0">
         <div class="card-thumb t4"><span aria-hidden="true">💀</span></div>
         <div class="card-body">
           <p class="card-genre">Acción · Souls-like</p>
           <h3 class="card-title">Dark Souls III</h3>
           <p class="card-desc">Muere, aprende, conquista. La cima del género que convirtió la dificultad en arte.</p>
-          <div class="card-foot">
-            <span class="card-rating">★ 9.4</span>
-            <span class="card-price">$29.99</span>
-          </div>
+          <div class="card-foot"><span class="card-rating">★ 9.4</span><span class="card-price">$29.99</span></div>
         </div>
-        <a class="card-cta" href="https://amazon.com/dp/B01C5IN48I?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank" aria-label="Comprar Dark Souls III">
-          🛒 COMPRAR EN AMAZON
-        </a>
+        <a class="card-cta" href="https://amazon.com/dp/B01C5IN48I?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank">🛒 COMPRAR EN AMAZON</a>
       </article>
-
-      <article class="game-card reveal" role="listitem" tabindex="0" aria-label="Hollow Knight">
+      <article class="game-card reveal" role="listitem" tabindex="0">
         <div class="card-thumb t5"><span aria-hidden="true">🦋</span></div>
         <div class="card-body">
           <p class="card-genre">Metroidvania · Indie</p>
           <h3 class="card-title">Hollow Knight</h3>
           <p class="card-desc">Un mundo subterráneo colmado de misterio y belleza. La obra maestra del indie gaming.</p>
-          <div class="card-foot">
-            <span class="card-rating">★ 9.3</span>
-            <span class="card-price">$14.99</span>
-          </div>
+          <div class="card-foot"><span class="card-rating">★ 9.3</span><span class="card-price">$14.99</span></div>
         </div>
-        <a class="card-cta" href="https://www.humblebundle.com/store/hollow-knight?partner=nexusgaming" rel="noopener sponsored" target="_blank" aria-label="Comprar Hollow Knight en Humble Bundle">
-          🛒 VER EN HUMBLE BUNDLE
-        </a>
+        <a class="card-cta" href="https://www.humblebundle.com/store/hollow-knight?partner=nexusgaming" rel="noopener sponsored" target="_blank">🛒 VER EN HUMBLE BUNDLE</a>
       </article>
-
-      <article class="game-card reveal" role="listitem" tabindex="0" aria-label="Hades II">
+      <article class="game-card reveal" role="listitem" tabindex="0">
         <div class="card-thumb t6"><span aria-hidden="true">🔥</span><span class="badge badge-hot">TRENDING</span></div>
         <div class="card-body">
           <p class="card-genre">Roguelike · Acción</p>
           <h3 class="card-title">Hades II</h3>
           <p class="card-desc">El inframundo te llama de nuevo. Meléinoe desciende con más furia que nunca.</p>
-          <div class="card-foot">
-            <span class="card-rating">★ 9.5</span>
-            <span class="card-price">$29.99</span>
-          </div>
+          <div class="card-foot"><span class="card-rating">★ 9.5</span><span class="card-price">$29.99</span></div>
         </div>
-        <a class="card-cta" href="https://store.steampowered.com/app/1145350/Hades_II/" rel="noopener" target="_blank" aria-label="Ver Hades II en Steam">
-          🎮 VER EN STEAM
-        </a>
+        <a class="card-cta" href="https://store.steampowered.com/app/1145350/Hades_II/" rel="noopener" target="_blank">🎮 VER EN STEAM</a>
       </article>
-
     </div>
   </div>
 
-  <!-- ══ DEALS / OFERTAS ══ -->
+  <!-- DEALS -->
   <div id="deals" style="position:relative;z-index:1;background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
     <div class="section-wrap" style="padding-top:3rem;padding-bottom:3rem;">
       <div class="section-head">
         <span class="section-tag">// MEJOR PRECIO HOY</span>
-        <h2 class="section-title">Deals &amp; Ofertas
-          <a href="#" class="section-more">Ver todas →</a>
-        </h2>
+        <h2 class="section-title">Deals &amp; Ofertas <a href="#" class="section-more">Ver todas →</a></h2>
       </div>
-
       <div class="deals-grid">
-
-        <article class="deal-card reveal" tabindex="0" aria-label="Oferta The Witcher 3">
-          <div class="deal-thumb t3"><span aria-hidden="true">🧙</span></div>
+        <article class="deal-card reveal" tabindex="0">
+          <div class="deal-thumb t3"><span>🧙</span></div>
           <div class="deal-body">
             <p class="deal-store">GOG.com · Afiliado</p>
             <h3 class="deal-title">The Witcher 3: Complete</h3>
-            <div class="deal-prices">
-              <span class="deal-new">$7.99</span>
-              <span class="deal-old">$49.99</span>
-              <span class="deal-off">−84%</span>
-            </div>
-            <a class="deal-cta" href="https://www.gog.com/game/the_witcher_3_wild_hunt" rel="noopener sponsored" target="_blank" aria-label="Ver oferta The Witcher 3 en GOG">VER OFERTA</a>
+            <div class="deal-prices"><span class="deal-new">$7.99</span><span class="deal-old">$49.99</span><span class="deal-off">−84%</span></div>
+            <a class="deal-cta" href="https://www.gog.com/game/the_witcher_3_wild_hunt" rel="noopener sponsored" target="_blank">VER OFERTA</a>
           </div>
         </article>
-
-        <article class="deal-card reveal" tabindex="0" aria-label="Oferta Red Dead Redemption 2">
-          <div class="deal-thumb t4"><span aria-hidden="true">🤠</span></div>
+        <article class="deal-card reveal" tabindex="0">
+          <div class="deal-thumb t4"><span>🤠</span></div>
           <div class="deal-body">
             <p class="deal-store">Humble Bundle · Afiliado</p>
             <h3 class="deal-title">Red Dead Redemption 2</h3>
-            <div class="deal-prices">
-              <span class="deal-new">$19.99</span>
-              <span class="deal-old">$59.99</span>
-              <span class="deal-off">−67%</span>
-            </div>
-            <a class="deal-cta" href="https://www.humblebundle.com/store/red-dead-redemption-2?partner=nexusgaming" rel="noopener sponsored" target="_blank" aria-label="Ver oferta RDR2 en Humble Bundle">VER OFERTA</a>
+            <div class="deal-prices"><span class="deal-new">$19.99</span><span class="deal-old">$59.99</span><span class="deal-off">−67%</span></div>
+            <a class="deal-cta" href="https://www.humblebundle.com/store/red-dead-redemption-2?partner=nexusgaming" rel="noopener sponsored" target="_blank">VER OFERTA</a>
           </div>
         </article>
-
-        <article class="deal-card reveal" tabindex="0" aria-label="Oferta Horizon Zero Dawn">
-          <div class="deal-thumb t1"><span aria-hidden="true">🏹</span></div>
+        <article class="deal-card reveal" tabindex="0">
+          <div class="deal-thumb t1"><span>🏹</span></div>
           <div class="deal-body">
             <p class="deal-store">Amazon · Afiliado</p>
             <h3 class="deal-title">Horizon Zero Dawn Complete</h3>
-            <div class="deal-prices">
-              <span class="deal-new">$9.99</span>
-              <span class="deal-old">$49.99</span>
-              <span class="deal-off">−80%</span>
-            </div>
-            <a class="deal-cta" href="https://amazon.com/dp/B07V9SGRN5?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank" aria-label="Ver oferta Horizon en Amazon">VER OFERTA</a>
+            <div class="deal-prices"><span class="deal-new">$9.99</span><span class="deal-old">$49.99</span><span class="deal-off">−80%</span></div>
+            <a class="deal-cta" href="https://amazon.com/dp/B07V9SGRN5?tag=nexusgamingar-21" rel="noopener sponsored" target="_blank">VER OFERTA</a>
           </div>
         </article>
-
       </div>
-
-      <!-- NOTA LEGAL AFILIADOS -->
-      <p style="font-size:0.68rem;color:var(--muted);margin-top:1.5rem;line-height:1.6;">
-        <em>* Los precios pueden variar. Algunos links son de afiliado (Amazon Associates, Humble Bundle Partner). 
-        Si compras a través de ellos, Nexus Gaming recibe una pequeña comisión sin costo adicional para ti.</em>
-      </p>
+      <p style="font-size:0.68rem;color:var(--muted);margin-top:1.5rem;line-height:1.6;"><em>* Los precios pueden variar. Algunos links son de afiliado. Si comprás a través de ellos, Nexus Gaming recibe una pequeña comisión sin costo adicional para vos.</em></p>
     </div>
   </div>
 
-  <!-- ══ NOTICIAS ══ -->
+  <!-- ══ BLOG DINÁMICO — carga desde articles.json ══ -->
+  <div class="section-wrap" id="blog">
+    <div class="section-head">
+      <span class="section-tag">// CONTENIDO RECIENTE</span>
+      <h2 class="section-title">Blog &amp; Guías <a href="#" class="section-more">Ver todos →</a></h2>
+    </div>
+    <div class="blog-grid" id="blogGrid">
+      <div class="blog-loading" id="blogLoading">⚡ Cargando artículos...</div>
+    </div>
+  </div>
+
+  <!-- NOTICIAS -->
   <div class="section-wrap" id="noticias">
     <div class="section-head">
       <span class="section-tag">// ÚLTIMAS NOTICIAS</span>
-      <h2 class="section-title">Gaming News
-        <a href="#" class="section-more">Ver todas →</a>
-      </h2>
+      <h2 class="section-title">Gaming News <a href="#" class="section-more">Ver todas →</a></h2>
     </div>
-
     <div style="display:grid;grid-template-columns:1fr 300px;gap:2rem;align-items:start;">
-      <div class="news-grid" style="display:flex;flex-direction:column;gap:1.25rem;">
-
-        <article class="news-featured reveal" tabindex="0" aria-label="Noticia destacada">
-          <div class="news-featured-img" aria-hidden="true">🎮</div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <article class="news-featured reveal" tabindex="0">
+          <div class="news-featured-img">🎮</div>
           <div class="news-featured-body">
             <p class="card-genre">INDUSTRIA</p>
             <h3 class="news-featured-title">La IA revoluciona el desarrollo de videojuegos: ¿El futuro o el fin de los estudios indie?</h3>
-            <p class="news-featured-excerpt">Los principales estudios del mundo integran herramientas de inteligencia artificial para generar assets, código y narrativas. Analizamos qué significa esto para el gaming independiente.</p>
+            <p class="news-featured-excerpt">Los principales estudios del mundo integran herramientas de inteligencia artificial para generar assets, código y narrativas.</p>
             <span class="news-meta">📅 25 Feb 2025 · 8 min lectura · <span style="color:var(--cyan)">ANÁLISIS</span></span>
           </div>
         </article>
-
         <div class="news-stack">
           <article class="news-item reveal" tabindex="0">
-            <span class="news-item-icon" aria-hidden="true">🏆</span>
-            <div>
-              <p class="news-item-title">The Game Awards 2025 anuncia nominaciones con grandes sorpresas</p>
-              <span class="news-item-meta">24 Feb 2025 · 4 min</span>
-            </div>
+            <span class="news-item-icon">🏆</span>
+            <div><p class="news-item-title">The Game Awards 2025 anuncia nominaciones con grandes sorpresas</p><span class="news-item-meta">24 Feb 2025 · 4 min</span></div>
           </article>
           <article class="news-item reveal" tabindex="0">
-            <span class="news-item-icon" aria-hidden="true">🎯</span>
-            <div>
-              <p class="news-item-title">Valve lanza Steam Deck 2 con OLED y mayor autonomía de batería</p>
-              <span class="news-item-meta">23 Feb 2025 · 3 min</span>
-            </div>
+            <span class="news-item-icon">🎯</span>
+            <div><p class="news-item-title">Valve lanza Steam Deck 2 con OLED y mayor autonomía de batería</p><span class="news-item-meta">23 Feb 2025 · 3 min</span></div>
           </article>
           <article class="news-item reveal" tabindex="0">
-            <span class="news-item-icon" aria-hidden="true">⚡</span>
-            <div>
-              <p class="news-item-title">PlayStation 6: primeros detalles técnicos filtrados confirman ray-tracing nativo</p>
-              <span class="news-item-meta">22 Feb 2025 · 5 min</span>
-            </div>
+            <span class="news-item-icon">⚡</span>
+            <div><p class="news-item-title">PlayStation 6: primeros detalles técnicos filtrados confirman ray-tracing nativo</p><span class="news-item-meta">22 Feb 2025 · 5 min</span></div>
           </article>
         </div>
       </div>
-
-      <!-- SIDEBAR AD (AdSense 300×250) -->
       <aside aria-label="Publicidad lateral">
-        <!-- PRODUCCIÓN: reemplaza por código AdSense real
-        <ins class="adsbygoogle"
-             style="display:block;width:300px;height:250px;"
-             data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
-             data-ad-slot="XXXXXXXXXX"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        -->
-        <div class="ad-rect-placeholder reveal" aria-hidden="true">
-          <span style="font-size:1.5rem;">📢</span>
-          ADSENSE 300×250<br>AQUÍ
-        </div>
+        <div class="ad-rect-placeholder reveal"><span style="font-size:1.5rem;">📢</span>ADSENSE 300×250</div>
       </aside>
     </div>
   </div>
 
 </main>
 
-<!-- ══ NEWSLETTER ══ -->
-<div class="newsletter-wrap" role="complementary" aria-label="Suscripción">
+<!-- NEWSLETTER -->
+<div class="newsletter-wrap" role="complementary">
   <h2>No te pierdas ningún <span style="color:var(--cyan)">DEAL</span></h2>
   <p>Ofertas exclusivas, reviews anticipadas y acceso a torneos. Sin spam, nunca.</p>
-  <form class="nl-form" id="nlForm" novalidate aria-label="Formulario newsletter">
-    <!-- Honeypot anti-bot -->
-    <input type="text" name="_trap" style="display:none;" tabindex="-1" autocomplete="off" aria-hidden="true">
-    <label for="nl-email" style="position:absolute;width:1px;height:1px;overflow:hidden;">Email</label>
-    <input type="email" id="nl-email" name="email" class="nl-input"
-           placeholder="tu@email.com" autocomplete="email"
-           required maxlength="254" aria-required="true" aria-describedby="nl-msg">
+  <form class="nl-form" id="nlForm" novalidate>
+    <input type="text" name="_trap" style="display:none;" tabindex="-1" autocomplete="off">
+    <input type="email" id="nl-email" name="email" class="nl-input" placeholder="tu@email.com" autocomplete="email" required maxlength="254">
     <button type="submit" class="btn-primary" id="nlBtn">SUSCRIBIRME</button>
   </form>
   <p class="nl-msg" id="nl-msg" role="alert" aria-live="polite"></p>
-  <p style="font-size:0.7rem;color:var(--muted);margin-top:1rem;">
-    Al suscribirte aceptas nuestra <a href="privacy.html" style="color:var(--cyan)">Política de Privacidad</a>.
-  </p>
+  <p style="font-size:0.7rem;color:var(--muted);margin-top:1rem;">Al suscribirte aceptas nuestra <a href="privacy.html" style="color:var(--cyan)">Política de Privacidad</a>.</p>
 </div>
 
-<!-- ══ FOOTER ══ -->
+<!-- FOOTER -->
 <footer role="contentinfo">
   <div class="footer-inner">
-    <div class="footer-brand">
+    <div>
       <div class="footer-logo">NEXUS GAMING</div>
       <p class="footer-desc">Tu portal gaming en español. Reviews honestas, noticias al instante y los mejores deals del mercado.</p>
-      <p class="footer-disclaimer">
-        Nexus Gaming participa en programas de afiliados como Amazon Associates y Humble Bundle Partner Program.
-        Los links de afiliado son identificados con el atributo <code>rel="sponsored"</code>.
-        No aceptamos pago por dar buenas reviews.
-      </p>
+      <p class="footer-disclaimer">Nexus Gaming participa en programas de afiliados como Amazon Associates y Humble Bundle Partner Program. Los links de afiliado son identificados con <code>rel="sponsored"</code>. No aceptamos pago por dar buenas reviews.</p>
     </div>
     <div>
       <p class="footer-col-title">EXPLORAR</p>
       <ul class="footer-links">
         <li><a href="#juegos">Reviews</a></li>
         <li><a href="#deals">Deals</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#noticias">Noticias</a></li>
-        <li><a href="#esports">Esports</a></li>
       </ul>
     </div>
     <div>
@@ -913,181 +506,188 @@
       <p class="footer-col-title">LEGAL</p>
       <ul class="footer-links">
         <li><a href="privacy.html">Privacidad</a></li>
-        <li><a href="terms.html">Términos de Uso</a></li>
-        <li><a href="cookies.html">Política de Cookies</a></li>
-        <li><a href="affiliate.html">Divulgación Afiliados</a></li>
-        <li><a href="contact.html">Contacto</a></li>
+        <li><a href="terms.html">Términos</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+        <li><a href="affiliate.html">Afiliados</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">© 2025 Nexus Gaming · Todos los derechos reservados</p>
-    <nav class="footer-legal" aria-label="Links legales">
-      <a href="privacy.html">Privacidad</a>
-      <a href="terms.html">Términos</a>
-      <a href="cookies.html">Cookies</a>
-    </nav>
+    <nav class="footer-legal"><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a><a href="cookies.html">Cookies</a></nav>
   </div>
 </footer>
 
-<!-- ══════════════════════════════════════
-     JAVASCRIPT — Seguro, sin eval(),
-     sin innerHTML con datos de usuario
-══════════════════════════════════════ -->
 <script>
-  "use strict";
+"use strict";
 
-  // ── Sanitización HTML (prevención XSS) ──
-  function escapeHTML(str) {
-    const map = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','/':'&#x2F;'};
-    return String(str).replace(/[&<>"'/]/g, c => map[c]);
-  }
+// ── Helpers ──
+function escapeHTML(str) {
+  const map = {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','/':'&#x2F;'};
+  return String(str).replace(/[&<>"'/]/g, c => map[c]);
+}
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 254;
+}
 
-  // ── Validar email (RFC 5322 simplificado) ──
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && email.length <= 254;
-  }
+const THUMB_CLASSES = ['t1','t2','t3','t4','t5','t6','t7','t8'];
+const BADGE_MAP = {
+  'HOT':      'badge-hot',
+  'NUEVO':    'badge-new',
+  'TRENDING': 'badge-hot',
+  'DEAL':     'badge-deal',
+  'GOTY':     'badge-goty'
+};
 
-  // ═══════════════════════════════
-  // COOKIE CONSENT
-  // ═══════════════════════════════
-  const cookieBanner  = document.getElementById('cookieBanner');
-  const cookieAccept  = document.getElementById('cookieAccept');
-  const cookieReject  = document.getElementById('cookieReject');
-  const COOKIE_KEY    = 'nx_cookie_consent';
+// ══════════════════════════════
+// SISTEMA DE BLOG DINÁMICO
+// Lee articles.json y renderiza las cards
+// Para agregar un artículo: solo editá articles.json
+// ══════════════════════════════
+async function loadBlog() {
+  const grid    = document.getElementById('blogGrid');
+  const loading = document.getElementById('blogLoading');
+  const statEl  = document.getElementById('stat-articulos');
 
-  function hideBanner() {
-    if (cookieBanner) {
-      cookieBanner.style.display = 'none';
-    }
-  }
-
-  function loadAnalytics() {
-    // Solo carga scripts de terceros si el usuario acepta
-    // En producción, aquí agregas el script de Google Analytics dinámicamente
-    console.info('[Nexus] Analytics activados por consentimiento del usuario.');
-  }
-
-  // Revisar si ya dio consentimiento en sesión anterior
   try {
-    const consent = localStorage.getItem(COOKIE_KEY);
-    if (consent) hideBanner();
-    if (consent === 'all') loadAnalytics();
-  } catch (e) { /* localStorage no disponible */ }
+    const res  = await fetch('articles.json');
+    if (!res.ok) throw new Error('No se pudo cargar articles.json');
+    const articles = await res.json();
 
-  if (cookieAccept) {
-    cookieAccept.addEventListener('click', () => {
-      try { localStorage.setItem(COOKIE_KEY, 'all'); } catch(e){}
-      hideBanner();
-      loadAnalytics();
+    // Actualizar stat
+    if (statEl) statEl.textContent = articles.length + '+';
+
+    // Limpiar loading
+    if (loading) loading.remove();
+
+    // Renderizar cards
+    articles.forEach((art, i) => {
+      const thumbClass = THUMB_CLASSES[i % THUMB_CLASSES.length];
+      const badgeHTML  = art.badge && BADGE_MAP[art.badge]
+        ? `<span class="badge ${BADGE_MAP[art.badge]}">${escapeHTML(art.badge)}</span>`
+        : '';
+      const afiliadoHTML = art.afiliado
+        ? `<a class="blog-cta" href="${escapeHTML(art.afiliado.url)}" rel="${escapeHTML(art.afiliado.rel)}" target="_blank">🛒 ${escapeHTML(art.afiliado.texto)}</a>`
+        : `<a class="blog-cta" href="articles/${escapeHTML(art.slug)}.html">LEER ARTÍCULO →</a>`;
+
+      const card = document.createElement('article');
+      card.className = 'blog-card reveal';
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', escapeHTML(art.titulo));
+
+      // Usamos textContent donde sea posible para evitar XSS
+      card.innerHTML = `
+        <div class="blog-thumb ${thumbClass}">
+          <span aria-hidden="true">${escapeHTML(art.emoji)}</span>
+          ${badgeHTML}
+        </div>
+        <div class="blog-body">
+          <span class="blog-cat">${escapeHTML(art.categoria)}</span>
+          <h3 class="blog-title">${escapeHTML(art.titulo)}</h3>
+          <p class="blog-excerpt">${escapeHTML(art.excerpt)}</p>
+          <div class="blog-meta">
+            <span>📅 ${escapeHTML(art.fecha)}</span>
+            <span>⏱ ${escapeHTML(art.lectura)}</span>
+          </div>
+          ${afiliadoHTML}
+        </div>
+      `;
+
+      grid.appendChild(card);
+
+      // Activar reveal observer para la nueva card
+      revealObs.observe(card);
     });
+
+  } catch (err) {
+    if (loading) {
+      loading.className = 'blog-error';
+      loading.textContent = '⚠ No se pudieron cargar los artículos. Verificá que articles.json esté en la raíz del sitio.';
+    }
+    console.warn('[Nexus Blog]', err.message);
   }
+}
 
-  if (cookieReject) {
-    cookieReject.addEventListener('click', () => {
-      try { localStorage.setItem(COOKIE_KEY, 'essential'); } catch(e){}
-      hideBanner();
-    });
-  }
+// ══════════════════════════════
+// COOKIE CONSENT
+// ══════════════════════════════
+const cookieBanner = document.getElementById('cookieBanner');
+const COOKIE_KEY   = 'nx_cookie_consent';
+function hideBanner() { if (cookieBanner) cookieBanner.style.display = 'none'; }
+function loadAnalytics() { console.info('[Nexus] Analytics activados.'); }
+try {
+  const consent = localStorage.getItem(COOKIE_KEY);
+  if (consent) hideBanner();
+  if (consent === 'all') loadAnalytics();
+} catch(e) {}
+document.getElementById('cookieAccept')?.addEventListener('click', () => {
+  try { localStorage.setItem(COOKIE_KEY, 'all'); } catch(e){}
+  hideBanner(); loadAnalytics();
+});
+document.getElementById('cookieReject')?.addEventListener('click', () => {
+  try { localStorage.setItem(COOKIE_KEY, 'essential'); } catch(e){}
+  hideBanner();
+});
 
-  // ═══════════════════════════════
-  // NEWSLETTER — Validación segura
-  // ═══════════════════════════════
-  const nlForm = document.getElementById('nlForm');
-  const nlMsg  = document.getElementById('nl-msg');
-  const nlBtn  = document.getElementById('nlBtn');
-
-  if (nlForm) {
-    nlForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Anti-bot: honeypot
-      const trap = nlForm.querySelector('input[name="_trap"]');
-      if (trap && trap.value !== '') return; // Bot silenciado
-
-      const emailEl = document.getElementById('nl-email');
-      const email   = emailEl ? emailEl.value.trim() : '';
-
-      nlMsg.textContent = '';
-      nlMsg.className = 'nl-msg';
-
-      if (!email) {
-        nlMsg.textContent = '⚠ Ingresa tu email para continuar.';
-        nlMsg.className = 'nl-msg err';
-        if (emailEl) emailEl.focus();
-        return;
-      }
-
-      if (!isValidEmail(email)) {
-        // Nunca usar innerHTML aquí; textContent es seguro
-        nlMsg.textContent = '⚠ Email inválido. Verifica el formato.';
-        nlMsg.className = 'nl-msg err';
-        if (emailEl) emailEl.focus();
-        return;
-      }
-
-      // Rate limiting: 1 envío cada 60 segundos
-      try {
-        const last = sessionStorage.getItem('nl_last_submit');
-        if (last && (Date.now() - parseInt(last, 10)) < 60000) {
-          nlMsg.textContent = '⏳ Espera un momento antes de reintentar.';
-          nlMsg.className = 'nl-msg err';
-          return;
-        }
-      } catch(e){}
-
-      // Deshabilitar para evitar doble envío (CSRF básico cliente)
-      nlBtn.disabled = true;
-      nlBtn.textContent = 'ENVIANDO...';
-
-      // Aquí irá tu llamada fetch al backend con CSRF token real.
-      // Ej: fetch('/api/subscribe', { method:'POST', headers:{...}, body: JSON.stringify({email}) })
-      setTimeout(() => {
-        try { sessionStorage.setItem('nl_last_submit', String(Date.now())); } catch(e){}
-        nlMsg.textContent = '✅ ¡Bienvenido al nexo! Confirma tu email en tu bandeja.';
-        nlMsg.className = 'nl-msg ok';
-        nlForm.reset();
-        nlBtn.disabled = false;
-        nlBtn.textContent = 'SUSCRIBIRME';
-      }, 1200);
-    });
-  }
-
-  // ═══════════════════════════════
-  // REVEAL ON SCROLL (Intersection Observer)
-  // ═══════════════════════════════
-  const revealObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08 });
-
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  // ═══════════════════════════════
-  // KEYBOARD: cards interactivas con Enter/Space
-  // ═══════════════════════════════
-  document.querySelectorAll('.game-card, .deal-card, .news-item, .news-featured').forEach(card => {
-    card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        const link = card.querySelector('a');
-        if (link) link.click();
-      }
-    });
+// ══════════════════════════════
+// NEWSLETTER
+// ══════════════════════════════
+const nlForm = document.getElementById('nlForm');
+const nlMsg  = document.getElementById('nl-msg');
+const nlBtn  = document.getElementById('nlBtn');
+if (nlForm) {
+  nlForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const trap = nlForm.querySelector('input[name="_trap"]');
+    if (trap && trap.value !== '') return;
+    const emailEl = document.getElementById('nl-email');
+    const email   = emailEl ? emailEl.value.trim() : '';
+    nlMsg.textContent = ''; nlMsg.className = 'nl-msg';
+    if (!email) { nlMsg.textContent = '⚠ Ingresá tu email.'; nlMsg.className = 'nl-msg err'; return; }
+    if (!isValidEmail(email)) { nlMsg.textContent = '⚠ Email inválido.'; nlMsg.className = 'nl-msg err'; return; }
+    try {
+      const last = sessionStorage.getItem('nl_last_submit');
+      if (last && (Date.now() - parseInt(last,10)) < 60000) { nlMsg.textContent = '⏳ Esperá un momento.'; nlMsg.className = 'nl-msg err'; return; }
+    } catch(e){}
+    nlBtn.disabled = true; nlBtn.textContent = 'ENVIANDO...';
+    setTimeout(() => {
+      try { sessionStorage.setItem('nl_last_submit', String(Date.now())); } catch(e){}
+      nlMsg.textContent = '✅ ¡Bienvenido al nexo! Confirmá tu email.';
+      nlMsg.className = 'nl-msg ok';
+      nlForm.reset(); nlBtn.disabled = false; nlBtn.textContent = 'SUSCRIBIRME';
+    }, 1200);
   });
+}
 
-  // ═══════════════════════════════
-  // SEGURIDAD: Deshabilitar console en producción
-  // ═══════════════════════════════
-  if (location.hostname !== 'localhost' && !location.hostname.includes('127.0.0.1')) {
-    const noop = () => {};
-    ['log','warn','error','info','debug'].forEach(m => { try { console[m] = noop; } catch(e){} });
-  }
+// ══════════════════════════════
+// REVEAL ON SCROLL
+// ══════════════════════════════
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObs.unobserve(entry.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ══════════════════════════════
+// KEYBOARD NAVIGATION
+// ══════════════════════════════
+document.querySelectorAll('.game-card, .deal-card, .news-item, .news-featured').forEach(card => {
+  card.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.querySelector('a')?.click(); }
+  });
+});
+
+// ══════════════════════════════
+// INICIAR BLOG
+// ══════════════════════════════
+loadBlog();
+
+// Deshabilitar console en producción
+if (location.hostname !== 'localhost' && !location.hostname.includes('127.0.0.1')) {
+  const noop = () => {};
+  ['log','warn','error','info','debug'].forEach(m => { try { console[m] = noop; } catch(e){} });
+}
 </script>
-
 </body>
 </html>

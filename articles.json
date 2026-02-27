@@ -1,0 +1,98 @@
+[
+  {
+    "id": "001",
+    "slug": "mejores-juegos-pc-gratis-2025",
+    "titulo": "Los 10 mejores juegos gratis para PC en 2025",
+    "categoria": "GUÍAS",
+    "excerpt": "¿Sin presupuesto pero con ganas de jugar? Estos son los títulos free-to-play que están rompiendo todo en 2025. Sin trampa, sin cartón.",
+    "emoji": "🎮",
+    "fecha": "27 Feb 2025",
+    "lectura": "6 min",
+    "badge": "HOT",
+    "afiliado": {
+      "texto": "Ver en Steam gratis",
+      "url": "https://store.steampowered.com/genre/Free%20to%20Play/",
+      "rel": "noopener"
+    }
+  },
+  {
+    "id": "002",
+    "slug": "build-pc-gamer-barata-argentina-2025",
+    "titulo": "Build PC Gamer por menos de $500 USD en Argentina (2025)",
+    "categoria": "HARDWARE",
+    "excerpt": "Armamos la mejor configuración teniendo en cuenta el dólar blue, la disponibilidad local y el precio real en el mercado argentino.",
+    "emoji": "🖥️",
+    "fecha": "25 Feb 2025",
+    "lectura": "8 min",
+    "badge": "NUEVO",
+    "afiliado": {
+      "texto": "Ver componentes en Amazon",
+      "url": "https://amazon.com?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
+    "id": "003",
+    "slug": "review-helldivers-2-vale-la-pena",
+    "titulo": "Review Helldivers 2: ¿Vale la pena en 2025?",
+    "categoria": "REVIEWS",
+    "excerpt": "La democracia necesita soldados. Analizamos a fondo si Helldivers 2 sigue siendo una compra obligada o ya pasó su momento de gloria.",
+    "emoji": "🪖",
+    "fecha": "22 Feb 2025",
+    "lectura": "7 min",
+    "badge": "TRENDING",
+    "afiliado": {
+      "texto": "Comprar en Amazon",
+      "url": "https://amazon.com/dp/B0CW7MTPFK?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
+    "id": "004",
+    "slug": "como-comprar-juegos-baratos-ps5-argentina",
+    "titulo": "Cómo comprar juegos baratos para PS5 en Argentina",
+    "categoria": "TIPS",
+    "excerpt": "Turquía, Brasil, PSN gift cards... Te explicamos todos los métodos legales para ahorrar hasta un 70% en juegos digitales para tu PS5.",
+    "emoji": "💸",
+    "fecha": "20 Feb 2025",
+    "lectura": "5 min",
+    "badge": null,
+    "afiliado": {
+      "texto": "Ver PSN Cards en Amazon",
+      "url": "https://amazon.com/s?k=psn+gift+card&tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
+    "id": "005",
+    "slug": "mejores-auriculares-gaming-baratos-argentina",
+    "titulo": "Los mejores auriculares gaming baratos en Argentina 2025",
+    "categoria": "HARDWARE",
+    "excerpt": "Comparamos los mejores headsets por debajo de los $50 USD. Sonido, micrófono, comodidad y precio real en pesos argentinos.",
+    "emoji": "🎧",
+    "fecha": "18 Feb 2025",
+    "lectura": "6 min",
+    "badge": "DEAL",
+    "afiliado": {
+      "texto": "Ver auriculares en Amazon",
+      "url": "https://amazon.com/s?k=auriculares+gaming&tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
+    "id": "006",
+    "slug": "steam-deck-vs-rog-ally-cual-comprar",
+    "titulo": "Steam Deck vs ROG Ally: ¿Cuál te conviene comprar?",
+    "categoria": "COMPARATIVAS",
+    "excerpt": "Dos portátiles gamer, dos filosofías distintas. Analizamos precio, rendimiento, catálogo y cuál tiene más sentido para el gamer argentino.",
+    "emoji": "⚔️",
+    "fecha": "15 Feb 2025",
+    "lectura": "9 min",
+    "badge": null,
+    "afiliado": {
+      "texto": "Ver Steam Deck en Amazon",
+      "url": "https://amazon.com/dp/B0BG94QNWB?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  }
+]

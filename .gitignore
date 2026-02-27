@@ -1,0 +1,6 @@
+# Claves secretas — NUNCA subir a GitHub
+.env
+
+# Node modules
+node_modules/
+package-lock.json

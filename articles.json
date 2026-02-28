@@ -1,5 +1,21 @@
 [
   {
+    "id": "007",
+    "slug": "mejoresjuegoscooperativos",
+    "titulo": "Juegos Coop",
+    "categoria": "GUIAS",
+    "excerpt": "Descubre los mejores juegos cooperativos para jugar con amigos en diferentes plataformas",
+    "emoji": "👫",
+    "fecha": "28 de feb de 2026",
+    "lectura": "15 min",
+    "badge": "HOT",
+    "afiliado": {
+      "texto": "Comprar juegos en Amazon",
+      "url": "https://amazon.com?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
     "id": "001",
     "slug": "mejores-juegos-pc-gratis-2025",
     "titulo": "Los 10 mejores juegos gratis para PC en 2025",

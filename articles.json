@@ -1,5 +1,21 @@
 [
   {
+    "id": "009",
+    "slug": "mejoresjuegospc2025",
+    "titulo": "Mejores Juegos",
+    "categoria": "REVIEWS",
+    "excerpt": "Descubre los mejores juegos de PC para 2025, con gráficos impresionantes y jugabilidad adictiva",
+    "emoji": "🎮",
+    "fecha": "28 de feb de 2026",
+    "lectura": "15 min",
+    "badge": "HOT",
+    "afiliado": {
+      "texto": "Comprar juegos en Amazon",
+      "url": "https://amazon.com?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
     "id": "008",
     "slug": "mejoresjuegosindie2025",
     "titulo": "Mejores Juegos",

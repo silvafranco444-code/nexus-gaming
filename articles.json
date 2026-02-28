@@ -1,5 +1,21 @@
 [
   {
+    "id": "008",
+    "slug": "mejoresjuegosindie2025",
+    "titulo": "Mejores Juegos",
+    "categoria": "REVIEWS",
+    "excerpt": "Descubre los mejores juegos indie de 2025, con historias emocionales y jugabilidad adictiva.",
+    "emoji": "🎮",
+    "fecha": "28 de feb de 2026",
+    "lectura": "20 min",
+    "badge": "NUEVO",
+    "afiliado": {
+      "texto": "Comprar juegos en Amazon",
+      "url": "https://amazon.com?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
     "id": "007",
     "slug": "mejoresjuegoscooperativos",
     "titulo": "Juegos Coop",

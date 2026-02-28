@@ -1,5 +1,21 @@
 [
   {
+    "id": "010",
+    "slug": "hollowknight2025",
+    "titulo": "Hollow Knight",
+    "categoria": "REVIEWS",
+    "excerpt": "Descubre la magia de Hollow Knight, un juego de acción y aventura en un mundo oscuro y misterioso",
+    "emoji": "🦇",
+    "fecha": "28 de feb de 2026",
+    "lectura": "20 min",
+    "badge": "NUEVO",
+    "afiliado": {
+      "texto": "Comprar Hollow Knight en Amazon",
+      "url": "https://amazon.com/hollow-knight?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
     "id": "009",
     "slug": "mejoresjuegospc2025",
     "titulo": "Mejores Juegos",

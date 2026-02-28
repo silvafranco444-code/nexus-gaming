@@ -1,5 +1,21 @@
 [
   {
+    "id": "011",
+    "slug": "reddeadredemption2",
+    "titulo": "Red Dead 2",
+    "categoria": "REVIEWS",
+    "excerpt": "Análisis de Red Dead Redemption 2, el juego de Rockstar Games",
+    "emoji": "🐴",
+    "fecha": "28 de feb de 2026",
+    "lectura": "20 min",
+    "badge": "HOT",
+    "afiliado": {
+      "texto": "Comprar en Amazon",
+      "url": "https://amazon.com?tag=nexusgamingar-21",
+      "rel": "noopener sponsored"
+    }
+  },
+  {
     "id": "010",
     "slug": "hollowknight2025",
     "titulo": "Hollow Knight",
